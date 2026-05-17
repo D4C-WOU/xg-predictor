@@ -3,22 +3,25 @@ from pydantic import BaseModel
 
 class ShotFeatures(BaseModel):
 
-    minute: int = 55
-    period: int = 2
+    minute: int 
+    period: int 
 
-    x: float = 112
-    y: float = 40
+    x: float 
+    y: float 
 
-    shot_distance: float = 7.5
-    angle: float = 0.9
-    centrality: float = 0.5
+    end_x: float
+    end_y: float
 
-    body_part_name: str = "Right Foot"
-    technique_name: str = "Normal"
-    play_pattern_name: str = "Regular Play"
+    shot_distance: float
+    shot_angle: float 
+    distance_from_center: float
 
-    under_pressure: bool = False
-    shot_first_time: bool = False
-    shot_one_on_one: bool = False
-    shot_open_goal: bool = False
-    shot_deflected: bool = False
+    body_part_name: str 
+    technique_name: str 
+    play_pattern_name: str 
+
+    under_pressure: bool 
+    shot_first_time: bool 
+    shot_one_on_one: bool 
+    shot_open_goal: bool 
+    shot_deflected: bool 

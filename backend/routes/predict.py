@@ -11,7 +11,7 @@ router = APIRouter()
 @router.post("/predict-xg")
 def predict_shot_xg(shot: ShotFeatures):
 
-    prediction = predict_xg(shot.dict())
+    prediction = predict_xg(shot.model_dump())
 
     return {
         "predicted_xg": round(prediction, 4)
