@@ -1,15 +1,12 @@
 import { useRef } from "react";
 
 function FootballPitch({ shotPosition, setShotPosition }) {
-
   const pitchRef = useRef(null);
 
   const handlePitchClick = (e) => {
-
     const rect = pitchRef.current.getBoundingClientRect();
 
     const clickX = e.clientX - rect.left;
-
     const clickY = e.clientY - rect.top;
 
     setShotPosition({
@@ -21,7 +18,6 @@ function FootballPitch({ shotPosition, setShotPosition }) {
   };
 
   return (
-
     <div
       ref={pitchRef}
       onClick={handlePitchClick}
@@ -37,18 +33,13 @@ function FootballPitch({ shotPosition, setShotPosition }) {
         cursor-crosshair
       "
     >
-
       {/* OUTER BORDER */}
 
       <div className="absolute inset-0 border-4 border-white rounded-xl" />
 
-
-
       {/* HALF LINE */}
 
       <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-white -translate-x-1/2" />
-
-
 
       {/* CENTER CIRCLE */}
 
@@ -75,8 +66,6 @@ function FootballPitch({ shotPosition, setShotPosition }) {
         "
       />
 
-
-
       {/* PENALTY AREA */}
 
       <div
@@ -100,30 +89,34 @@ function FootballPitch({ shotPosition, setShotPosition }) {
         "
       />
 
-
-
       {/* PENALTY AREA LABEL */}
 
       <p
         className="
-          absolute
+    absolute
 
-          right-1
-          top-[18%]
+    right-1
+    top-[25%]
 
-          text-[8px]
+    sm:right-2
+    sm:top-[21%]
 
-          sm:text-[10px]
-          md:text-xs
+    md:right-3
+    md:top-[18%]
 
-          font-semibold
-          text-white
-        "
+    text-[5px]
+    sm:text-[7px]
+    md:text-[10px]
+
+    font-semibold
+    text-white
+    whitespace-nowrap
+
+    pointer-events-none
+  "
       >
         Penalty Area
       </p>
-
-
 
       {/* GOAL AREA */}
 
@@ -148,30 +141,34 @@ function FootballPitch({ shotPosition, setShotPosition }) {
         "
       />
 
-
-
       {/* GOAL AREA LABEL */}
 
       <p
         className="
-          absolute
+    absolute
 
-          right-1
-          top-[28%]
+    right-1
+    top-[38%]
 
-          text-[8px]
+    sm:right-1
+    sm:top-[33%]
 
-          sm:text-[10px]
-          md:text-xs
+    md:right-2
+    md:top-[29%]
 
-          font-semibold
-          text-white
-        "
+    text-[5px]
+    sm:text-[7px]
+    md:text-[10px]
+
+    font-semibold
+    text-white
+    whitespace-nowrap
+
+    pointer-events-none
+  "
       >
         Goal Area
       </p>
-
-
 
       {/* GOAL */}
 
@@ -191,8 +188,6 @@ function FootballPitch({ shotPosition, setShotPosition }) {
           -translate-y-1/2
         "
       />
-
-
 
       {/* PENALTY SPOT */}
 
@@ -221,12 +216,9 @@ function FootballPitch({ shotPosition, setShotPosition }) {
         "
       />
 
-
-
       {/* SHOT MARKER */}
 
       {shotPosition && (
-
         <div
           className="
             absolute
@@ -252,9 +244,7 @@ function FootballPitch({ shotPosition, setShotPosition }) {
             transform: "translate(-50%, -50%)",
           }}
         />
-
       )}
-
     </div>
   );
 }
