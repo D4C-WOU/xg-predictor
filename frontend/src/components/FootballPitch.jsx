@@ -1,9 +1,11 @@
 import { useRef } from "react";
 
 function FootballPitch({ shotPosition, setShotPosition }) {
+
   const pitchRef = useRef(null);
 
   const handlePitchClick = (e) => {
+
     const rect = pitchRef.current.getBoundingClientRect();
 
     const clickX = e.clientX - rect.left;
@@ -19,6 +21,7 @@ function FootballPitch({ shotPosition, setShotPosition }) {
   };
 
   return (
+
     <div
       ref={pitchRef}
       onClick={handlePitchClick}
@@ -34,13 +37,18 @@ function FootballPitch({ shotPosition, setShotPosition }) {
         cursor-crosshair
       "
     >
+
       {/* OUTER BORDER */}
 
       <div className="absolute inset-0 border-4 border-white rounded-xl" />
 
+
+
       {/* HALF LINE */}
 
-      <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-white -translate-x-1/2" />
+      <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-white -translate-x-1/2" />
+
+
 
       {/* CENTER CIRCLE */}
 
@@ -49,15 +57,25 @@ function FootballPitch({ shotPosition, setShotPosition }) {
           absolute
           left-1/2
           top-1/2
-          w-28
-          h-28
-          border-4
+
+          w-16
+          h-16
+
+          sm:w-24
+          sm:h-24
+
+          md:w-28
+          md:h-28
+
+          border-[3px]
           border-white
           rounded-full
           -translate-x-1/2
           -translate-y-1/2
         "
       />
+
+
 
       {/* PENALTY AREA */}
 
@@ -66,28 +84,46 @@ function FootballPitch({ shotPosition, setShotPosition }) {
           absolute
           right-0
           top-1/2
-          w-32
-          h-48
+
+          w-20
+          h-32
+
+          sm:w-28
+          sm:h-40
+
+          md:w-32
+          md:h-48
+
           border-2
           border-white
           -translate-y-1/2
         "
       />
 
-      {/* LABEL */}
+
+
+      {/* PENALTY AREA LABEL */}
 
       <p
         className="
-  absolute
-  right-10
-  top-[calc(50%-115px)]
-  text-xs
-  font-semibold
-  text-white
-"
+          absolute
+
+          right-1
+          top-[18%]
+
+          text-[8px]
+
+          sm:text-[10px]
+          md:text-xs
+
+          font-semibold
+          text-white
+        "
       >
         Penalty Area
       </p>
+
+
 
       {/* GOAL AREA */}
 
@@ -96,26 +132,47 @@ function FootballPitch({ shotPosition, setShotPosition }) {
           absolute
           right-0
           top-1/2
-          w-16
-          h-28
+
+          w-10
+          h-16
+
+          sm:w-14
+          sm:h-24
+
+          md:w-16
+          md:h-28
+
           border-2
           border-white
           -translate-y-1/2
         "
       />
 
-      {/* LABEL */}
 
-      <p className="
-  absolute
-  right-2
-  top-[calc(50%-70px)]
-  text-xs
-  font-semibold
-  text-white
-">
+
+      {/* GOAL AREA LABEL */}
+
+      <p
+        className="
+          absolute
+
+          right-1
+          top-[28%]
+
+          text-[8px]
+
+          sm:text-[10px]
+          md:text-xs
+
+          font-semibold
+          text-white
+        "
+      >
         Goal Area
       </p>
+
+
+
       {/* GOAL */}
 
       <div
@@ -123,36 +180,66 @@ function FootballPitch({ shotPosition, setShotPosition }) {
           absolute
           right-0
           top-1/2
-          w-2
-          h-16
+
+          w-[3px]
+
+          h-10
+          sm:h-14
+          md:h-16
+
           bg-white
           -translate-y-1/2
         "
       />
+
+
 
       {/* PENALTY SPOT */}
 
       <div
         className="
           absolute
-          right-[82px]
+
+          right-[52px]
+          sm:right-[70px]
+          md:right-[82px]
+
           top-1/2
-          w-3
-          h-3
+
+          w-2
+          h-2
+
+          sm:w-2.5
+          sm:h-2.5
+
+          md:w-3
+          md:h-3
+
           bg-white
           rounded-full
           -translate-y-1/2
         "
       />
 
+
+
       {/* SHOT MARKER */}
 
       {shotPosition && (
+
         <div
           className="
             absolute
-            w-5
-            h-5
+
+            w-3
+            h-3
+
+            sm:w-4
+            sm:h-4
+
+            md:w-5
+            md:h-5
+
             bg-red-500
             rounded-full
             border-2
@@ -165,7 +252,9 @@ function FootballPitch({ shotPosition, setShotPosition }) {
             transform: "translate(-50%, -50%)",
           }}
         />
+
       )}
+
     </div>
   );
 }
