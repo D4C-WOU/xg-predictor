@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <div className='bg-slate-900 p-4 shadow-lg'>
       <h1 className='text-3xl font-bold text-green-400'>
-        ⚽ World Cup XG Predictor
+        xGenius - International Tournament xG Intelligence Platform
       </h1>
 
     </div>

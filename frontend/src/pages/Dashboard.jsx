@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import FootballPitch from "../components/FootballPitch";
 import PredictionForm from "../components/PredictionForm";
 import XGCard from "../components/XGCard";
+import ShotAnalysisCard from "../components/ShotAnalysisCard";
 
 function Dashboard() {
 
@@ -103,6 +104,7 @@ function Dashboard() {
             />
 
             <XGCard xg={xg} />
+            <ShotAnalysisCard xg={xg} />
 
           </div>
 
